@@ -150,7 +150,7 @@ bool ermilova_d_shell_sort_batcher_even_odd_merger_all::AllTask::RunImpl() {
 
     size_t base = total_size / size;
     size_t rem = total_size % size;
-    for (int i = 0; i < size; ++i) {
+    for (size_t i = 0; i < static_cast<size_t>(size); ++i) {
       send_counts[i] = static_cast<int>(base + (i < rem ? 1 : 0));
       displs[i] = static_cast<int>(offset);
       offset += send_counts[i];
