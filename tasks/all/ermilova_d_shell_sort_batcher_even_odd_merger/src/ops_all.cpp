@@ -175,9 +175,8 @@ bool ermilova_d_shell_sort_batcher_even_odd_merger_all::AllTask::RunImpl() {
     world.send(0, 1, local_chunk);
   }
 
-  std::vector<int> result;
-
   if (rank == 0) {
+    std::vector<int> result;
     result.resize(full_data.size());
     std::ranges::copy(local_chunk, result.begin());
 
